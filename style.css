@@ -3,17 +3,22 @@ body{
 }
 
 div.chart{
-  
-  margin: 25px auto;
+  display: flex;
+  margin: 50px auto;
   width: 700px;
   height: 500px;
   position: relative;
-  
+  align-items: center;
   border-radius: 25px;
   box-shadow: 20px 20px 40px #8b8b8b, 
               -20px -20px 40px #ffffff,
              -20px -20px 40px #ffffff;
-             
+             justify-content: center;  
+}
+
+iframe {
+  border: 2px solid rgba(255, 51, 51, .2);
+  border-radius: 15px;
 }
 
 #tooltip {
@@ -61,7 +66,7 @@ text.xlabel {
 }
 
 text.ylabel {
-  fill: #f03333cc;
+  fill: rgba(240, 51, 51, 0.8);
   font-weight: 800;
   font-size: 1rem;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
