@@ -33,10 +33,10 @@ async function draw() {
     let windowWidth = 0
   
         if (_device === "desktop") {
-                windowWidth = _tempWid / 2
+                windowWidth = 720
                             }
         else if (_device === "mobile") {
-                windowWidth - 50
+                windowWidth = 320
                             }
         else {
                 windowWidth = _tempWid
@@ -45,10 +45,10 @@ async function draw() {
     let windowHeight = 0
   
         if (_device === "desktop") {
-                windowHeight = _tempHei / 2
+                windowHeight = 405
                             }
         else if (_device === "mobile") {
-                windowHeight/2 - 50
+                windowHeight = 180
                             }
         else {
                 windowHeight = _tempHei
@@ -58,8 +58,8 @@ async function draw() {
 
   // Dimensions
   const dimensions = {
-    width: 640,
-    height: 360,
+    width: windowWidth,
+    height: windowHeight,
     marginX: function () {
         return d3.max([this.width * 0.12, 75])
     },
