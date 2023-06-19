@@ -48,7 +48,7 @@ async function draw() {
                 windowHeight = _tempHei / 2
                             }
         else if (_device === "mobile") {
-                windowHeight - 50
+                windowHeight/2 - 50
                             }
         else {
                 windowHeight = _tempHei
