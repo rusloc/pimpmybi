@@ -10,10 +10,13 @@ async function draw() {
   const _xacc = d => _dateParser(d.date)
   const _yacc = d => parseFloat(d.close)
 
+  const windowWidth = window.screen.width
+  const windowHeight = window.screen.height
+
   // Dimensions
   const dimensions = {
-    width: 700,
-    height: 350,
+    width: d3.min([720,windowWidth / 2]),
+    height: d3.min([405,windowHeight/ 2]),
     marginX: function () {
         return d3.max([this.width * 0.12, 75])
     },
@@ -126,7 +129,7 @@ async function draw() {
                         .attr('height', dimensions.height)
                         .style('opacity',0)
                         .classed('tpCoveredShape', true)
-                        .on('mousemove mouseover', function (e) {
+                        .on('mousemove mouseover tap', function (e) {
                                             const mousePos = d3.pointer(e, this)
                                             const date = _xScale.invert(mousePos[0])
 
