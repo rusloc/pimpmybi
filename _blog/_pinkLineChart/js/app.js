@@ -58,8 +58,8 @@ async function draw() {
 
   // Dimensions
   const dimensions = {
-    width: 720,
-    height: 405,
+    width: 640,
+    height: 360,
     marginX: function () {
         return d3.max([this.width * 0.12, 75])
     },
