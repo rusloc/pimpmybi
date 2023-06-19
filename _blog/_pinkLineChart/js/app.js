@@ -13,6 +13,23 @@ async function draw() {
   const windowWidth = window.screen.width
   const windowHeight = window.screen.height
 
+  const getDeviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    }
+    if (
+      /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+        ua
+      )
+    ) {
+      return "mobile";
+    }
+    return "desktop";
+  };
+  
+  console.log( getDeviceType() )
+
   // Dimensions
   const dimensions = {
     width: d3.max([720,windowWidth - 20]),
