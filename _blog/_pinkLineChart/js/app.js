@@ -36,7 +36,7 @@ async function draw() {
                 windowWidth = 720
                             }
         else if (_device === "mobile") {
-                windowWidth = 320
+                windowWidth = 640
                             }
         else {
                 windowWidth = _tempWid
@@ -48,7 +48,7 @@ async function draw() {
                 windowHeight = 405
                             }
         else if (_device === "mobile") {
-                windowHeight = 180
+                windowHeight = 360
                             }
         else {
                 windowHeight = _tempHei
