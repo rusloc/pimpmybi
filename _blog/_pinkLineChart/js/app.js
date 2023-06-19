@@ -10,8 +10,8 @@ async function draw() {
   const _xacc = d => _dateParser(d.date)
   const _yacc = d => parseFloat(d.close)
 
-  const windowWidth = window.screen.width
-  const windowHeight = window.screen.height
+  const _tempWid = window.screen.width
+  const _tempHei = window.screen.height
 
   const getDeviceType = () => {
     const ua = navigator.userAgent;
@@ -27,13 +27,39 @@ async function draw() {
     }
     return "desktop";
   };
+
+  const _device = getDeviceType()
+
+    let windowWidth = 0
   
-  console.log( getDeviceType() )
+        if (_device === "desktop") {
+                windowWidth = _tempWid / 2
+                            }
+        else if (_device === "mobile") {
+                windowWidth - 50
+                            }
+        else {
+                windowWidth = _tempWid
+        }
+
+    let windowHeight = 0
+  
+        if (_device === "desktop") {
+                windowHeight = _tempHei / 2
+                            }
+        else if (_device === "mobile") {
+                windowHeight - 50
+                            }
+        else {
+                windowHeight = _tempHei
+        }
+
+    console.log(windowHeight)
 
   // Dimensions
   const dimensions = {
-    width: d3.max([720,windowWidth - 20]),
-    height: d3.min([405,windowHeight / 2]),
+    width: windowWidth,
+    height: windowHeight,
     marginX: function () {
         return d3.max([this.width * 0.12, 75])
     },
