@@ -172,7 +172,7 @@ async function draw() {
                         .attr('height', dimensions.height)
                         .style('opacity',0)
                         .classed('tpCoveredShape', true)
-                        .on('mousemove mouseover touch', function (e) {
+                        .on('mousemove mouseover touchmove', function (e) {
                                             const mousePos = d3.pointer(e, this)
                                             const date = _xScale.invert(mousePos[0])
 
